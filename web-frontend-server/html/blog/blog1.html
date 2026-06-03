@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#353534",
+                    "primary": "#ddb7ff",
+                    "primary-fixed-dim": "#ddb7ff",
+                    "on-error-container": "#ffdad6",
+                    "on-primary": "#4a0080",
+                    "primary-container": "#4b0082",
+                    "surface-dim": "#131313",
+                    "secondary-container": "#47475d",
+                    "tertiary-fixed": "#ffdcc3",
+                    "on-surface": "#e5e2e1",
+                    "tertiary-container": "#4f2700",
+                    "on-primary-fixed-variant": "#622599",
+                    "surface-bright": "#3a3939",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-fixed-dim": "#c6c4df",
+                    "surface-container-highest": "#353534",
+                    "surface-container-high": "#2a2a2a",
+                    "secondary-fixed": "#e2e0fc",
+                    "tertiary": "#fbb884",
+                    "on-tertiary": "#4d2600",
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-primary": "#7b41b3",
+                    "surface-container": "#201f1f",
+                    "on-surface-variant": "#cec3d3",
+                    "surface": "#131313",
+                    "on-tertiary-fixed-variant": "#693c12",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#fbb884",
+                    "on-tertiary-fixed": "#2f1500",
+                    "inverse-on-surface": "#313030",
+                    "on-secondary": "#2f2e43",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary-container": "#c98c5c",
+                    "on-primary-fixed": "#2c0050",
+                    "on-primary-container": "#ba7ef4",
+                    "on-secondary-fixed": "#1a1a2e",
+                    "outline-variant": "#4c4451",
+                    "on-background": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#45455b",
+                    "surface-tint": "#ddb7ff",
+                    "outline": "#978d9d",
+                    "on-secondary-container": "#b8b6d0",
+                    "background": "#131313",
+                    "on-error": "#690005",
+                    "secondary": "#c6c4df",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#f0dbff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #131313; }
+        .font-space-grotesk { font-family: 'Space Grotesk', sans-serif; }
+        .glass-card {
+            background: rgba(32, 31, 31, 0.4);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(221, 183, 255, 0.15);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, transparent 60%, #131313 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(221, 183, 255, 0.5);
+        }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: #0e0e0e; }
+        ::-webkit-scrollbar-thumb { background: #4b0082; border-radius: 10px; }
+    </style>
+</head>
+<body class="text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/30 backdrop-blur-xl dark:bg-zinc-950/30 shadow-[0_0_15px_rgba(221,183,255,0.1)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-purple-300 dark:text-purple-200 font-space-grotesk">CELESTIAL</div>
+<div class="hidden md:flex items-center space-x-8 font-space-grotesk tracking-tight">
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors" href="index2.html">Missions</a>
+<a class="text-purple-300 border-b-2 border-purple-400 pb-1" href="#">Galaxies</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors" href="#">Archive</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors" href="#">Telemetry</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="hidden lg:flex items-center bg-surface-container-lowest px-4 py-1.5 rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm text-zinc-500">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-zinc-300 w-32 placeholder:text-zinc-600" placeholder="Scan sectors..." type="text"/>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2
+    rounded-xl text-sm font-medium hover:bg-white/5 transition-all duration-300"><a href="#">Signin</a></button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic deep space nebula" class="w-full h-full object-cover" data-alt="cinematic wide shot of a vibrant violet and blue deep space nebula with scattered brilliant stars and ethereal dust clouds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNSifOJesIXVIcHBq-b4oV1FEA5AoOKokZUJ-s7IgPvmNEMt-Bo4o4iGc89p5J7rE8I0qfcjvvcfn13RHMS3uQG4tYag5yRbBgjRe1pV1QFtzJAX06CSBfrbwZ3gSP-346UxBC_k9kzg6-T0Qod8lNTAXsW64Ds772Y7rs4Hq7xsZRFMcw6-b3yoUSt463kzRi7yVEmIQsK_49seHm9J1uKtGAphl8qrOrPDMPpYFX5HkSvjnleEATGWx8ds10vZ88pk8YaoCNp-Q"/>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<div class="relative z-10 w-full px-8 md:px-20 max-w-7xl mx-auto">
+<div class="max-w-3xl space-y-6">
+<div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary-container/30 border border-primary/20 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] tracking-[0.2em] font-medium uppercase text-primary">Live Telemetry Active</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-space-grotesk font-bold tracking-tighter text-white leading-[0.9] text-glow">
+                    Explore <br/>the Unseen
+                </h1>
+<p class="text-lg md:text-xl text-zinc-400 max-w-xl font-light leading-relaxed">
+                    A journey through the deepest reaches of our cosmos. Witness the majesty of celestial births and the silence of the void.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-primary text-on-primary-fixed px-8 py-4 rounded-xl font-bold tracking-tight hover:scale-95 transition-all duration-300">
+                        Start Your Mission
+                    </button>
+<button class="glass-card text-white px-8 py-4 rounded-xl font-medium flex items-center justify-center space-x-2 border border-outline-variant/30 hover:bg-white/10 transition-all">
+<span>View Archive</span>
+<span class="material-symbols-outlined text-sm">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Featured Galaxies -->
+<section class="relative z-10 py-24 px-8 max-w-[1920px] mx-auto bg-surface">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 px-4 md:px-12">
+<div class="space-y-2">
+<span class="text-[10px] tracking-[0.3em] uppercase text-tertiary font-bold">Cataloged Entities</span>
+<h2 class="text-4xl md:text-5xl font-space-grotesk font-bold tracking-tighter text-white">Featured Galaxies</h2>
+</div>
+<a class="mt-4 md:mt-0 text-primary text-sm font-medium hover:underline tracking-widest uppercase" href="#">View All Sectors</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10 px-4 md:px-12">
+<!-- Card 1: Andromeda -->
+<div class="group relative flex flex-col space-y-6">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl">
+<img alt="Andromeda Galaxy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="realistic close-up of the spiral Andromeda galaxy with glowing core and blue stellar clusters on deep black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPgZ2-w_esBrLBduvZty88sLR25t0to_CqmKu-yuE4juO6yQ4KW-FM_regCuLDawPA57VCCccvQBsZ_ylJRaigrOWXiRILEFHOv2yVZRZIs3FG62MNJy1sdUyJTLo26FfGd4SDo81WFPfRyjAwkfO9wWEg7XGkJcHb6Bn3QFSO5Y5T5CU982I2V0x7GtMgp8E-u39fp4kaZDnxs4YnWHsBTJ6jdQDjPk5c5CRPsAG6S9ntHxWaFXotFtXpI9_HLZVbwEMY_E3E-fk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<h3 class="text-2xl font-space-grotesk font-bold text-white">Andromeda</h3>
+<span class="text-[10px] text-zinc-500 font-mono">M31 / NGC 224</span>
+</div>
+<p class="text-zinc-400 text-sm leading-relaxed">
+                        The closest major galaxy to our own, a majestic spiral containing nearly a trillion stars.
+                    </p>
+<a class="inline-flex items-center space-x-2 text-primary font-medium group-hover:translate-x-2 transition-transform" href="#">
+<span>Explore</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Milky Way -->
+<div class="group relative flex flex-col space-y-6 md:-mt-12">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl ring-1 ring-primary/20 shadow-2xl shadow-primary/5">
+<img alt="Milky Way Galaxy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="wide angle view of the milky way core arching over a dark landscape with intense star density and cosmic dust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDviOPTgUO5RrB_TT03VZ6ttykwj0TONtfdxDRQHCnnTiXmVIl1iVMB1vl5cLYP3bZWKhRq6reuGCfe7z6-38M3YTd5cTTRct3z0M78h6bK1Wbaq5GzF1-7ylx8etdWyKjR58rWJkMQtS0xhSIJM_5kwkN9YFPoV5-yzkFZy1vt0X7tXHw_BzGsXv08uNK4nV5BBnchWiXR3YKfiaud-EOS6CrXuOK9jcy30mc2mEqpUQ-xd1aO6Lfq1X7X5UE-zNyN3PrUAdjjXts"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<h3 class="text-2xl font-space-grotesk font-bold text-white">Milky Way</h3>
+<span class="text-[10px] text-zinc-500 font-mono">Home System</span>
+</div>
+<p class="text-zinc-400 text-sm leading-relaxed">
+                        Our celestial home, a barred spiral galaxy spanning 100,000 light-years of brilliance.
+                    </p>
+<a class="inline-flex items-center space-x-2 text-primary font-medium group-hover:translate-x-2 transition-transform" href="#">
+<span>Explore</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3: Sombrero -->
+<div class="group relative flex flex-col space-y-6">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl">
+<img alt="Sombrero Galaxy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="high resolution telescope view of the sombrero galaxy with its prominent dark dust lane and bright central core" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCQYB8NCfk2dfsDfHrdxbIpn-NXL7MUiZLIJ3P2lyqfFHQAYXYdGRTyYQTjUv_R3VMs8sEBUpRFF5a7srd5wtFY3NeYlZQbZtun1mjJjSPtc6_kH_uSQWUfnOVBtGmYou4hD_4bKpvM2DLakZGJcttdefK3a8gBWxBUMsAQGwz11DA0Rkg701o9med5Y7dhHp2eyjEHVsiOB_K6kXkfr8t6AxvghiwO7pBFHYsZ3duZZta9TZiFEo8IuQMGB0IFpdJ0PYCAmqQEIY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<h3 class="text-2xl font-space-grotesk font-bold text-white">Sombrero</h3>
+<span class="text-[10px] text-zinc-500 font-mono">M104 / NGC 4594</span>
+</div>
+<p class="text-zinc-400 text-sm leading-relaxed">
+                        An unbarred spiral galaxy in the constellation Virgo, noted for its bright core and thick dust lane.
+                    </p>
+<a class="inline-flex items-center space-x-2 text-primary font-medium group-hover:translate-x-2 transition-transform" href="#">
+<span>Explore</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Cosmic Events (Horizontal Scroll) -->
+<section class="py-24 bg-surface-container-lowest overflow-hidden">
+<div class="px-8 md:px-20 max-w-[1920px] mx-auto mb-12">
+<h2 class="text-3xl font-space-grotesk font-bold text-white">Upcoming Astronomical Events</h2>
+</div>
+<div class="flex space-x-8 overflow-x-auto pb-12 px-8 md:px-20 no-scrollbar">
+<!-- Event 1 -->
+<div class="flex-none w-[400px] glass-card p-8 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[60px] rounded-full group-hover:bg-primary/20 transition-all"></div>
+<div class="flex flex-col justify-between h-full space-y-12">
+<div>
+<span class="text-tertiary font-mono text-xs tracking-widest uppercase">Nov 24, 2024</span>
+<h3 class="text-2xl font-space-grotesk font-bold mt-4 text-white">Perseid Radiant Peak</h3>
+</div>
+<div class="space-y-4">
+<p class="text-zinc-400 text-sm leading-relaxed">
+                            A high-density meteor shower visible in the northern hemisphere. Peak visibility at 03:00 UTC.
+                        </p>
+<div class="flex items-center space-x-2 text-xs text-primary font-bold">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>OPTIMAL VIEWING</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex-none w-[400px] glass-card p-8 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-fixed/10 blur-[60px] rounded-full group-hover:bg-secondary-fixed/20 transition-all"></div>
+<div class="flex flex-col justify-between h-full space-y-12">
+<div>
+<span class="text-tertiary font-mono text-xs tracking-widest uppercase">Dec 14, 2024</span>
+<h3 class="text-2xl font-space-grotesk font-bold mt-4 text-white">Geminid Meteor Shower</h3>
+</div>
+<div class="space-y-4">
+<p class="text-zinc-400 text-sm leading-relaxed">
+                            One of the best and most reliable annual meteor showers, with up to 120 meteors per hour.
+                        </p>
+<div class="flex items-center space-x-2 text-xs text-primary font-bold">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>MAXIMUM DENSITY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex-none w-[400px] glass-card p-8 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[60px] rounded-full group-hover:bg-primary/20 transition-all"></div>
+<div class="flex flex-col justify-between h-full space-y-12">
+<div>
+<span class="text-tertiary font-mono text-xs tracking-widest uppercase">Jan 08, 2025</span>
+<h3 class="text-2xl font-space-grotesk font-bold mt-4 text-white">Saturn Opposition</h3>
+</div>
+<div class="space-y-4">
+<p class="text-zinc-400 text-sm leading-relaxed">
+                            The ringed planet will be at its closest approach to Earth, with its face fully illuminated by the Sun.
+                        </p>
+<div class="flex items-center space-x-2 text-xs text-primary font-bold">
+<span class="material-symbols-outlined text-sm">satellite</span>
+<span>EQUIPMENT RECOMMENDED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="flex-none w-[400px] glass-card p-8 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-fixed/10 blur-[60px] rounded-full group-hover:bg-secondary-fixed/20 transition-all"></div>
+<div class="flex flex-col justify-between h-full space-y-12">
+<div>
+<span class="text-tertiary font-mono text-xs tracking-widest uppercase">Feb 12, 2025</span>
+<h3 class="text-2xl font-space-grotesk font-bold mt-4 text-white">Aurora Borealis Surge</h3>
+</div>
+<div class="space-y-4">
+<p class="text-zinc-400 text-sm leading-relaxed">
+                            Predicted high solar activity likely to produce intense geomagnetic storms and northern lights.
+                        </p>
+<div class="flex items-center space-x-2 text-xs text-primary font-bold">
+<span class="material-symbols-outlined text-sm">high_quality</span>
+<span>HIGH INTENSITY</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Data Section / Bento Grid -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 glass-card rounded-2xl p-10 flex flex-col justify-between h-[400px]">
+<h3 class="text-4xl font-space-grotesk font-bold text-white tracking-tighter">Observatory <br/>Live Status</h3>
+<div class="flex items-center space-x-4">
+<div class="h-2 w-2 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]"></div>
+<span class="text-sm font-mono text-zinc-400">Hubble / Webb Sync Confirmed</span>
+</div>
+</div>
+<div class="md:col-span-2 relative h-[400px] rounded-2xl overflow-hidden group">
+<img alt="Earth from space" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" data-alt="realistic satellite view of earth at night with city lights glowing and thin blue atmosphere against black space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXLlyXs1wYQgatsPCuXHMl0cTA38CqFCwBxyME9l29wlW9_6czJbMJBsHPIBrxiduh7c5q5TgOmqefaFjwSMEpx1h2PwJD40XlkymoZhTiPYeRnF2Yko4Yk0zq6U6lzrOvdwADo7cWU6pENUnmUYT6WY6otDZNgq1MYaiwsu6DH5mnnU-8B1gAilaguSXIe8oqh8O2CtLO8vI90GX_KrlFbzv0sfHb8pAC7OoV2_GV-tpREzrjnh_yn_h0j21iJyUumNATE_aB6ak"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<p class="text-white font-space-grotesk font-bold text-xl">Planetary Defense Network</p>
+<p class="text-zinc-400 text-xs">Monitoring Near-Earth Objects (NEO)</p>
+</div>
+</div>
+<div class="glass-card rounded-2xl p-8 flex flex-col justify-center items-center space-y-4 text-center">
+<span class="material-symbols-outlined text-4xl text-primary">rocket_launch</span>
+<span class="text-3xl font-bold text-white font-space-grotesk">142</span>
+<span class="text-[10px] tracking-widest text-zinc-500 uppercase">Active Missions</span>
+</div>
+<div class="glass-card rounded-2xl p-8 flex flex-col justify-center items-center space-y-4 text-center">
+<span class="material-symbols-outlined text-4xl text-tertiary">public</span>
+<span class="text-3xl font-bold text-white font-space-grotesk">8.4k</span>
+<span class="text-[10px] tracking-widest text-zinc-500 uppercase">Cataloged Planets</span>
+</div>
+<div class="md:col-span-2 bg-primary-container/20 border border-primary/10 rounded-2xl p-8 flex items-center justify-between">
+<div class="space-y-1">
+<h4 class="text-white font-bold">Deep Space Network</h4>
+<p class="text-zinc-400 text-sm">Join the observer community</p>
+</div>
+<button class="bg-primary text-on-primary-fixed px-6 py-2 rounded-lg text-sm font-bold">Join Now</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-zinc-950 dark:bg-black w-full px-12 py-16 flex flex-col md:flex-row justify-between items-center border-t border-white/5 font-inter text-sm uppercase tracking-widest">
+<div class="flex flex-col space-y-4 items-center md:items-start">
+<div class="font-space-grotesk font-black text-purple-300 text-2xl tracking-tighter">CELESTIAL</div>
+<p class="text-zinc-500 lowercase normal-case tracking-normal">© 2024 THE CELESTIAL OBSERVER. AD ASTRA.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mt-12 md:mt-0">
+<a class="text-zinc-500 hover:text-purple-200 transition-colors opacity-80 hover:opacity-100" href="#">Deep Space Network</a>
+<a class="text-zinc-500 hover:text-purple-200 transition-colors opacity-80 hover:opacity-100" href="#">Orbital Mechanics</a>
+<a class="text-zinc-500 hover:text-purple-200 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Protocol</a>
+<a class="text-zinc-500 hover:text-purple-200 transition-colors opacity-80 hover:opacity-100" href="#">Data Decryption</a>
+</div>
+<div class="flex space-x-6 mt-12 md:mt-0">
+<span class="material-symbols-outlined text-zinc-600 hover:text-primary transition-colors cursor-pointer">share</span>
+<span class="material-symbols-outlined text-zinc-600 hover:text-primary transition-colors cursor-pointer">star</span>
+<span class="material-symbols-outlined text-zinc-600 hover:text-primary transition-colors cursor-pointer">settings</span>
+</div>
+</footer>
+</body></html>

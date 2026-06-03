@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Du Lịch Phan Thiết 🌊</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --sun: #FFB830;
+      --ocean: #3AB4D4;
+      --sand: #FFF3DC;
+      --coral: #FF6B6B;
+      --mint: #A8EDCA;
+      --deep: #1A5276;
+      --text: #3D2B1F;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--sand);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, rgba(26,82,118,0.82) 0%, rgba(58,180,212,0.75) 50%, rgba(255,184,48,0.80) 100%), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=80') center/cover no-repeat;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0; right: 0;
+      height: 80px;
+      background: var(--sand);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .wave-emoji {
+      font-size: 3.5rem;
+      animation: float 3s ease-in-out infinite;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .hero h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--white);
+      text-shadow: 2px 4px 12px rgba(0,0,0,0.25);
+      line-height: 1.2;
+    }
+
+    .hero .subtitle {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.9);
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: rgba(255,255,255,0.25);
+      color: white;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      border-radius: 20px;
+      padding: 5px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      background: var(--deep);
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 7px 18px;
+      border-radius: 25px;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    nav a:hover {
+      background: var(--sun);
+      color: var(--deep);
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 60px 0 40px;
+    }
+
+    .section-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--deep);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 3px;
+      background: linear-gradient(90deg, var(--ocean), transparent);
+      border-radius: 2px;
+      margin-left: 10px;
+    }
+
+    /* ===== INTRO CARD ===== */
+    .intro-card {
+      background: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: 0 8px 30px rgba(58,180,212,0.12);
+      border-left: 6px solid var(--ocean);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--text);
+    }
+
+    .intro-card p + p { margin-top: 14px; }
+
+    /* ===== PLACE CARDS ===== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .place-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .place-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 36px rgba(58,180,212,0.2);
+    }
+
+    .card-thumb {
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .place-card:hover .card-thumb img {
+      transform: scale(1.07);
+    }
+
+    .card-thumb .thumb-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.35));
+      height: 60px;
+    }
+
+    .card-body { padding: 20px; }
+
+    .card-body h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--deep);
+      margin-bottom: 8px;
+    }
+
+    .card-body p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #555;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--mint);
+      color: var(--deep);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+
+    /* ===== FOOD SECTION ===== */
+    .food-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .food-item {
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+      transition: transform 0.25s;
+    }
+
+    .food-item:hover { transform: translateY(-4px); }
+
+    .food-emoji {
+      font-size: 2.8rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .food-info h4 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--deep);
+      margin-bottom: 6px;
+    }
+
+    .food-info p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* ===== TIPS ===== */
+    .tips-box {
+      background: linear-gradient(135deg, var(--sun) 0%, #FFDA85 100%);
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: 0 8px 28px rgba(255,184,48,0.25);
+    }
+
+    .tips-box h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--deep);
+      margin-bottom: 20px;
+    }
+
+    .tips-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .tips-list li {
+      background: rgba(255,255,255,0.6);
+      border-radius: 14px;
+      padding: 14px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--deep);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      backdrop-filter: blur(4px);
+    }
+
+    .tips-list li span.tip-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+    /* ===== TIMELINE ===== */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--ocean), var(--sun));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+      background: white;
+      border-radius: 18px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -26px; top: 22px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--ocean);
+      border: 3px solid var(--sand);
+      box-shadow: 0 0 0 3px var(--ocean);
+    }
+
+    .timeline-item h4 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--deep);
+      margin-bottom: 6px;
+    }
+
+    .timeline-item p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .time-badge {
+      background: var(--ocean);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    /* ===== BACK BUTTON ===== */
+    .back-section {
+      text-align: center;
+      padding: 40px 0 60px;
+    }
+
+    .btn-back {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--ocean), var(--deep));
+      color: white;
+      text-decoration: none;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 30px;
+      box-shadow: 0 6px 20px rgba(58,180,212,0.35);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .btn-back:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(58,180,212,0.45);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--deep);
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.88rem;
+    }
+
+    footer strong { color: var(--sun); }
+
+    /* ===== DIVIDER ===== */
+    .wavy-divider {
+      text-align: center;
+      font-size: 1.8rem;
+      letter-spacing: 4px;
+      padding: 10px 0 0;
+      color: var(--ocean);
+      opacity: 0.5;
+    }
+
+    @media (max-width: 600px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .food-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <span class="wave-emoji">🌊</span>
+  <h1>Phan Thiết — Thiên Đường Biển Xanh</h1>
+  <p class="subtitle">Khám phá thành phố biển quyến rũ nhất miền Nam Việt Nam ✨</p>
+  <div class="tags">
+    <span class="tag">🏖️ Biển đẹp</span>
+    <span class="tag">🍜 Ẩm thực ngon</span>
+    <span class="tag">🌅 Hoàng hôn tuyệt vời</span>
+    <span class="tag">🏄 Thể thao biển</span>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="/">🏠 Trang chủ</a>
+  <a href="index2.html">📚 Blog</a>
+  <a href="#gioi-thieu">Giới thiệu</a>
+  <a href="#dia-diem">Địa điểm</a>
+  <a href="#am-thuc">Ẩm thực</a>
+  <a href="#lich-trinh">Lịch trình</a>
+  <a href="#meo">Mẹo hay</a>
+</nav>
+
+<!-- INTRO -->
+<section id="gioi-thieu">
+  <div class="container">
+    <h2 class="section-title">🌴 Phan Thiết là gì?</h2>
+    <div class="intro-card">
+      <p>
+        <strong>Phan Thiết</strong> là thành phố tỉnh lỵ của tỉnh Bình Thuận, nằm cách TP.HCM khoảng
+        <strong>200 km</strong> về phía Đông Bắc. Nơi đây nổi tiếng với những bãi biển hoang sơ, cồn cát đỏ huyền bí,
+        và là "thủ đô" của nước mắm ngon nhất Việt Nam! 🐟
+      </p>
+      <p>
+        Phan Thiết sở hữu khí hậu nhiệt đới khô ráo, ít mưa quanh năm — lý tưởng để trốn thoát cái nóng ẩm
+        ở thành phố lớn. Đặc biệt, khu resort <strong>Mũi Né</strong> nổi tiếng quốc tế với những đồi cát đỏ,
+        đồi cát trắng và môn <em>kitesurfing</em> đẳng cấp thế giới. 🪁
+      </p>
+      <p>
+        Dù bạn là người yêu thích nghỉ dưỡng, phượt thủ hay foodie — Phan Thiết đều có thứ dành cho bạn! 🎉
+      </p>
+    </div>
+    <div class="wavy-divider">〰〰〰</div>
+  </div>
+</section>
+
+<!-- PLACES -->
+<section id="dia-diem" style="background: white; padding: 60px 0 50px;">
+  <div class="container">
+    <h2 class="section-title">📍 Địa điểm không thể bỏ qua</h2>
+    <div class="cards-grid">
+
+      <div class="place-card">
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1509233725247-49e657c54213?w=600&q=80" alt="Bãi biển Mũi Né"/>
+          <div class="thumb-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3>Bãi biển Mũi Né</h3>
+          <p>Bãi biển dài và xanh ngắt, nổi tiếng với gió mạnh — thiên đường của dân lướt ván diều (kitesurfing) và cano.</p>
+          <span class="badge">⭐ Nổi tiếng quốc tế</span>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="card-thumb">
+          <img src="https://cdn.tgdd.vn/Files/2023/09/06/1546051/tong-hop-8-dia-diem-du-lich-phan-thiet-binh-thuan-cho-tin-do-me-di-202309062033384143.jpg" alt="Đồi Cát Đỏ"/>
+          <div class="thumb-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3>Đồi Cát Đỏ</h3>
+          <p>Những đụn cát đỏ rực đặc trưng của Bình Thuận, cực đẹp khi chụp ảnh lúc bình minh hoặc hoàng hôn. Trẻ con mê trượt cát!</p>
+          <span class="badge">📸 Check-in sống ảo</span>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="card-thumb">
+          <img src="https://tse2.mm.bing.net/th/id/OIP._y6dp-uD-ipwKYkdf6Ty0AHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Đảo Phú Quý"/>
+          <div class="thumb-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3>Đảo Phú Quý</h3>
+          <p>Hòn đảo ngọc cách đất liền 120 km, nước biển trong vắt nhìn thấy đáy, rạn san hô đẹp mê hồn — ít du khách hơn nên rất yên tĩnh.</p>
+          <span class="badge">🐠 Lặn ngắm san hô</span>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="card-thumb">
+          <img src="https://th.bing.com/th/id/R.7ac2bb5b66c78d85ef0f380cfe1fff04?rik=BW4XPaYif9exQQ&pid=ImgRaw&r=0" alt="Suối Tiên"/>
+          <div class="thumb-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3>Suối Tiên</h3>
+          <p>Con suối nhỏ uốn lượn qua cồn cát trắng tinh, tạo nên khung cảnh thơ mộng như trong tranh vẽ — cực phù hợp để thư giãn.</p>
+          <span class="badge">🌿 Thiên nhiên hoang sơ</span>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="card-thumb">
+          <img src="https://muine-explorer.com/kcfinder/upload/images/1-poshanu-cham-towers-in-phan-thiet-vietnam.jpg" alt="Tháp Chăm Poshanu"/>
+          <div class="thumb-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3>Tháp Chăm Poshanu</h3>
+          <p>Quần thể tháp Chăm cổ hơn 1.000 năm tuổi nhìn ra biển, lưu giữ nét văn hoá huyền bí của người Chăm Pa xưa.</p>
+          <span class="badge">🏛️ Di tích lịch sử</span>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="card-thumb">
+          <img src="https://www.trangantravel.com.vn/wp-content/uploads/2019/05/du-lich-phan-thiet-3.jpg" alt="Bàu Trắng"/>
+          <div class="thumb-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3>Bàu Trắng</h3>
+          <p>Đồi cát trắng mịn ngay cạnh hồ nước ngọt xanh biếc — tương phản tuyệt đẹp, thoạt trông như sa mạc Sahara thu nhỏ!</p>
+          <span class="badge">🌊 Combo cát + hồ</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOD -->
+<section id="am-thuc">
+  <div class="container">
+    <h2 class="section-title">🍽️ Ẩm thực Phan Thiết</h2>
+    <div style="border-radius:20px;overflow:hidden;margin-bottom:28px;height:220px;position:relative;">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&q=80" alt="Hải sản tươi sống" style="width:100%;height:100%;object-fit:cover;"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(26,82,118,0.7),transparent);display:flex;align-items:center;padding:32px;">
+        <div>
+          <p style="color:var(--sun);font-weight:800;font-size:0.9rem;letter-spacing:2px;">ĐẶC SẢN VÙNG BIỂN</p>
+          <h3 style="color:white;font-family:'Baloo 2',cursive;font-size:1.8rem;font-weight:800;margin-top:4px;">Thiên đường ẩm thực<br/>dưới nắng biển 🌊</h3>
+        </div>
+      </div>
+    </div>
+    <div class="food-list">
+
+      <div class="food-item">
+        <div class="food-emoji">🐟</div>
+        <div class="food-info">
+          <h4>Nước mắm Phan Thiết</h4>
+          <p>Nổi danh cả nước, làm từ cá cơm tươi theo công thức truyền thống hàng trăm năm. Màu vàng óng, mùi thơm đặc trưng.</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <div class="food-emoji">🍢</div>
+        <div class="food-info">
+          <h4>Bánh căn Phan Thiết</h4>
+          <p>Bánh nhỏ xinh đúc từ bột gạo, ăn kèm nước mắm chua ngọt và mực, tôm tươi — đặc sản "quốc dân" của vùng biển này.</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <div class="food-emoji">🦑</div>
+        <div class="food-info">
+          <h4>Hải sản tươi sống</h4>
+          <p>Tôm hùm, cua huỳnh đế, ghẹ, mực nhảy... tất cả đều cực tươi, giá mềm hơn nhiều so với Sài Gòn. Ăn là nghiện!</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <div class="food-emoji">🍜</div>
+        <div class="food-info">
+          <h4>Bún suông</h4>
+          <p>Sợi bún kèm chả tôm hình ống dài (suông), nước dùng ngọt thanh từ xương heo — ăn sáng cực khoái khẩu.</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <div class="food-emoji">🥖</div>
+        <div class="food-info">
+          <h4>Bánh mì Phan Thiết</h4>
+          <p>Ổ bánh mì giòn rụm, nhân phong phú với chả, pate, dưa leo... nổi tiếng đến mức có hẳn thương hiệu xuất ngoại!</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <div class="food-emoji">🍹</div>
+        <div class="food-info">
+          <h4>Thanh long Bình Thuận</h4>
+          <p>Thanh long ruột đỏ, ngọt mát — Bình Thuận là vựa thanh long lớn nhất nước. Ăn tươi, làm sinh tố hay kem đều tuyệt!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section id="lich-trinh" style="background: white; padding: 60px 0 50px;">
+  <div class="container">
+    <h2 class="section-title">📅 Gợi ý lịch trình 2 ngày 1 đêm</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <span class="time-badge">Ngày 1 · Sáng</span>
+        <h4>🚌 Khởi hành từ TP.HCM</h4>
+        <p>Xe khách hoặc tự lái, khoảng 3–4 tiếng. Đến Phan Thiết ăn trưa bánh căn và hải sản tươi sống ở chợ Phan Thiết.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="time-badge">Ngày 1 · Chiều</span>
+        <h4>🏜️ Đồi cát đỏ & Suối Tiên</h4>
+        <p>Trượt cát, chụp ảnh, tắm mình trong khung cảnh hoang dã. Đặt vé trượt cát nhớ mặc cả nhé! Sau đó dạo Suối Tiên mát mẻ.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="time-badge">Ngày 1 · Tối</span>
+        <h4>🌅 Hoàng hôn & hải sản nướng</h4>
+        <p>Ra bờ biển Mũi Né ngắm hoàng hôn tuyệt đẹp. Tối ăn hải sản nướng tại các quán ven biển, thử ngay mực nhảy và tôm hùm!</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="time-badge">Ngày 2 · Sáng sớm</span>
+        <h4>🌄 Bình minh Bàu Trắng</h4>
+        <p>Dậy sớm 5h đến Bàu Trắng xem bình minh lên — cảnh cát trắng + hồ xanh trong ánh sáng ban mai thực sự không thể tả!</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="time-badge">Ngày 2 · Sáng</span>
+        <h4>🏯 Tháp Chăm Poshanu</h4>
+        <p>Thăm di tích văn hóa Chăm Pa cổ kính, tìm hiểu lịch sử vùng đất. View biển từ trên cao cực đẹp!</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="time-badge">Ngày 2 · Trưa & Chiều</span>
+        <h4>🛍️ Mua đồ về & lên đường</h4>
+        <p>Ghé chợ mua nước mắm, bánh tráng, mực khô làm quà. Ăn bún suông trước khi lên xe về Sài Gòn đầy ắp kỷ niệm! 🎒</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section id="meo">
+  <div class="container">
+    <h2 class="section-title">💡 Mẹo du lịch Phan Thiết</h2>
+    <div class="tips-box">
+      <h3>🧳 Những điều cần biết trước khi đi</h3>
+      <ul class="tips-list">
+        <li><span class="tip-icon">☀️</span> <span>Mùa đẹp nhất là <strong>tháng 11 đến tháng 4</strong> — ít mưa, biển lặng. Tránh mùa gió (tháng 6–9) nếu muốn tắm biển.</span></li>
+        <li><span class="tip-icon">🧴</span> <span>Kem chống nắng SPF 50+ là BẮT BUỘC — nắng Phan Thiết cực mạnh, da sạm rất nhanh!</span></li>
+        <li><span class="tip-icon">🛵</span> <span>Thuê xe máy khoảng 100–150k/ngày là cách di chuyển tiện nhất giữa các điểm, nhất là trên đường ven biển thơ mộng.</span></li>
+        <li><span class="tip-icon">🐠</span> <span>Mặc cả giá hải sản trước khi ăn — hỏi giá từng kg, tránh bị "chặt chém" ở vài quán trên trục đường lớn.</span></li>
+        <li><span class="tip-icon">🌊</span> <span>Khi trượt cát đồi đỏ, nhớ thuê tấm trượt tại chỗ (khoảng 20k) và đi giày dép cũ vì cát rất nóng giữa trưa!</span></li>
+        <li><span class="tip-icon">📷</span> <span>Giờ vàng chụp ảnh: <strong>6:00–7:30 sáng</strong> và <strong>17:00–18:30 chiều</strong> — ánh sáng đẹp, ít người, màu trời như tranh.</span></li>
+        <li><span class="tip-icon">🏨</span> <span>Đặt phòng resort ở Mũi Né trước ít nhất 2 tuần vào mùa cao điểm (Tết, hè) — giá tăng gấp đôi nếu đặt trễ.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BACK BUTTON -->
+<div class="back-section">
+  <a href="/blog/" class="btn-back">← Quay lại trang Blog</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>✍️ Bài viết thuộc <strong>MyMiniCloud Blog</strong> · Chủ đề Du Lịch</p>
+  <p style="margin-top:6px;">🌊 Phan Thiết — nơi trái tim luôn muốn quay về 💛</p>
+</footer>
+
+</body>
+</html>

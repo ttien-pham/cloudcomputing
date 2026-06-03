@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Paws &amp; Whiskers | Organic Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be_Vietnam_Pro:wght@300;400;500;600;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#00352f",
+                        "inverse-primary": "#c5f6e3",
+                        "tertiary": "#72572a",
+                        "on-secondary": "#ffeff1",
+                        "surface-container-high": "#a4f1e3",
+                        "on-primary": "#ccfdea",
+                        "secondary-fixed-dim": "#f5b1c2",
+                        "on-secondary-container": "#6a3847",
+                        "surface-bright": "#d6fff6",
+                        "tertiary-fixed": "#fdd79f",
+                        "surface-container-low": "#bcfef1",
+                        "tertiary-fixed-dim": "#eec992",
+                        "on-tertiary-container": "#634a1f",
+                        "error": "#b31b25",
+                        "on-surface-variant": "#2b655c",
+                        "outline-variant": "#7fb8ad",
+                        "on-primary-fixed": "#144336",
+                        "error-dim": "#9f0519",
+                        "tertiary-dim": "#654b20",
+                        "primary-dim": "#2a584a",
+                        "on-secondary-fixed-variant": "#754150",
+                        "background": "#d6fff6",
+                        "secondary-dim": "#73404f",
+                        "surface-tint": "#376455",
+                        "surface-container": "#aef6e8",
+                        "surface-variant": "#98ecdd",
+                        "primary-fixed-dim": "#a9d9c7",
+                        "on-tertiary-fixed": "#4f370e",
+                        "on-tertiary": "#fff0e0",
+                        "on-background": "#00352f",
+                        "on-tertiary-fixed-variant": "#6e5327",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#6fa79d",
+                        "secondary": "#814c5b",
+                        "surface": "#d6fff6",
+                        "secondary-container": "#ffc1d0",
+                        "on-primary-fixed-variant": "#336052",
+                        "primary-container": "#b7e7d5",
+                        "surface-container-highest": "#98ecdd",
+                        "inverse-surface": "#00110e",
+                        "surface-dim": "#8ae5d5",
+                        "error-container": "#fb5151",
+                        "on-error-container": "#570008",
+                        "secondary-fixed": "#ffc1d0",
+                        "on-secondary-fixed": "#532534",
+                        "primary-fixed": "#b7e7d5",
+                        "outline": "#488177",
+                        "tertiary-container": "#fdd79f",
+                        "primary": "#376455",
+                        "on-error": "#ffefee",
+                        "on-primary-container": "#295649"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#d6fff6]/80 dark:bg-[#00352f]/80 backdrop-blur-md shadow-[0_20px_40px_rgba(0,53,47,0.06)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
+<div class="text-2xl font-bold text-[#376455] dark:text-[#b7e7d5] flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="paws">pets</span>
+                Organic Sanctuary
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-medium text-sm">
+<a class="text-[#376455] font-bold border-b-2 border-[#376455] pb-1" href="#">Home</a>
+<a class="text-[#376455]/70 hover:text-[#376455] transition-colors" href="#">Services</a>
+<a class="text-[#376455]/70 hover:text-[#376455] transition-colors" href="#">Adopt</a>
+<a class="text-[#376455]/70 hover:text-[#376455] transition-colors" href="index2.html">Blog</a>
+<a class="text-[#376455]/70 hover:text-[#376455] transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200 shadow-lg">Book Now</button>
+<button class="hidden lg:block bg-secondary-container text-on-secondary-container px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform duration-200">Donate</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-8 py-16 lg:py-32 max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold mb-6 tracking-wide">WELCOME TO PAWS &amp; WHISKERS</span>
+<h1 class="text-5xl lg:text-7xl font-extrabold text-on-surface leading-[1.1] mb-8">
+                        Find Your <span class="text-primary italic">Furry</span> Soulmate
+                    </h1>
+<p class="text-lg text-on-surface-variant mb-10 max-w-lg leading-relaxed">
+                        Every paw print tells a story. At Organic Sanctuary, we bridge the gap between lonely hearts and loyal companions in a space designed for love.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:scale-[0.98] transition-all shadow-xl">
+                            Meet Our Dogs
+                        </button>
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-full font-bold text-lg hover:scale-[0.98] transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                            Success Stories
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-12 -left-12 w-80 h-80 bg-primary-container/30 rounded-full blur-3xl"></div>
+<div class="relative rounded-t-xl rounded-br-xl rounded-bl-lg overflow-hidden shadow-2xl transform rotate-2">
+<img alt="Happy Golden Retriever" class="w-full h-[500px] object-cover" data-alt="Close-up portrait of a happy Golden Retriever dog smiling in a sun-drenched meadow with soft warm backlight and blurred greenery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEBBo_wL1_-acRLBPY_uaOPGOy_sLoSTClPdJbeFcb8o8_H2HlJU03hXwk0-L0tDNtqr8U89ZEkRp9jq3MQQJCEwpWfNmea87kkTWP1byd-1tvu3lC9KwOd9cxSUHrdAdBPnNiA4_9OjA4yJUrI-aGTkS47AZqkegscr11pDB0RUl01Axyx3a7YDRyBXRE8_9UV7CXKANaRfsIFPVAacvdi8SMGGQxfnFee8YWGcpyfk5Ukaz2G2wIvs9porUJuSb95fUwIDHJXa4"/>
+</div>
+<!-- Floating Stat Card -->
+<div class="absolute bottom-10 -left-8 bg-surface-container-lowest p-6 rounded-xl shadow-2xl flex items-center gap-4">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div>
+<p class="text-2xl font-extrabold text-on-surface">1,200+</p>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Happy Tails</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Mission Section -->
+<section class="bg-surface-container-low py-24 mt-12 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 relative">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1 relative">
+<div class="aspect-square bg-secondary-container rounded-[4rem] rotate-6 absolute inset-0 -z-10"></div>
+<img alt="Vet with dog" class="rounded-[3.5rem] w-full h-[500px] object-cover shadow-xl -rotate-2" data-alt="Professional veterinarian gently holding a small corgi dog in a modern bright pet clinic with soft pastel green walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIWzxgrPqfknE7D3OMRLHAaAJZ9p4-d2haono1EEk6fpHYPqhXLTBhwBhGhtr0lxX8Siuj98ZPMEcEFVBbBC806Nu6NU3WLyGMQavgCCHsSIu1Sf4sGhEj6W6V5RBNV2Hb2bEDojoIbTBgHmXbHXpc3gTeqKjiBa5KssZymcOgEL0y7aKT6wFuRRGsNcNMhFaTsx3f7IKIpSr8pvdfjNvhWJ_XqwBeSKtZxqhRn6q2IT2oFmbwOuYvZoi0qc_zqfHXD7IaLomF-ms"/>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="text-4xl font-extrabold mb-8">Nurturing Nature, One Paw at a Time</h2>
+<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                            Our mission is rooted in the belief that pets deserve an environment that mirrors their pure spirits. We provide organic nutrition, holistic care, and an abundance of love to every animal that walks through our sanctuary doors.
+                        </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="bg-primary-container p-3 rounded-2xl">
+<span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
+</div>
+<div>
+<h4 class="font-bold text-xl mb-1">Organic Nutrition</h4>
+<p class="text-on-surface-variant">We feed our residents only premium, grain-free organic diets.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-secondary-container p-3 rounded-2xl">
+<span class="material-symbols-outlined text-secondary" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+<div>
+<h4 class="font-bold text-xl mb-1">Compassionate Care</h4>
+<p class="text-on-surface-variant">24/7 onsite medical and emotional support for every pet.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Puppies Grid -->
+<section class="py-24 max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl lg:text-5xl font-extrabold mb-4">Puppies Looking for a Home</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">These little ones are waiting to find their forever humans. Could it be you?</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Puppy Card 1 -->
+<div class="group bg-surface-container-lowest rounded-xl lg:rounded-t-xl lg:rounded-br-xl lg:rounded-bl-md overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="Golden Retriever Puppy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of a fluffy golden retriever puppy sitting on a white blanket with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTmTgjvg-IYMRJGUoWR6dVwg_F2HOydWl-jdAuzn_TesCiONSJCP8HkaLrkojqOOvaUG0MmlJ1VoIpGJuWAfBqB8jNec4p18TQ3PSigxNchSlLlUOOf9oy1kbOKNlw-M8hjxCw_0DUuDnA_rcPhq6sTMji9ZdaIbEpR_26iWQiCoVUW3a4A4fZQvUB1kKBCkhYNi_m7F-X-elXZalvcmfO_aadCxshpJ4wq7Xr61u5PlMzI-H4PixoBAuCdrUz-qpjIHQAAdRGIak"/>
+<div class="absolute top-4 right-4 bg-primary-container text-primary font-bold px-3 py-1 rounded-full text-xs">NEW</div>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-1">Oliver</h3>
+<p class="text-on-surface-variant text-sm mb-4">12 Weeks • Golden Retriever</p>
+<button class="w-full bg-secondary-container text-on-secondary-container font-bold py-3 rounded-full hover:bg-secondary hover:text-on-secondary transition-colors">Adopt Me</button>
+</div>
+</div>
+<!-- Puppy Card 2 -->
+<div class="group bg-surface-container-lowest rounded-xl lg:rounded-t-xl lg:rounded-br-xl lg:rounded-bl-md overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="Corgi Puppy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Pembroke Welsh Corgi puppy running on green grass with playful expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJxCiPIsqIDpTGjgePKFWXYr-YOXsHr2hFlwRbGyCCjdZKptBrqjjRFANNCH4utoQc5J65a-5ETvTe8eoNNFog9VaQpuMCZdrPiZSQ-CVR8ks2LqVFNkuIykmLBWqNChXa1EMxCxcEhr2HJR_WawEUkL_Qh_wN1KI0sGjTUveO4wk2XRwSRRcMblLnsEa5YdKgf0fT_C2B5TrFb7V8fapzmFsyqXEFVL7ayPQHsgKiPRN-Fh6_tCFOjlCfz2hPjitZYPravJTM1Mo"/>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-1">Luna</h3>
+<p class="text-on-surface-variant text-sm mb-4">4 Months • Welsh Corgi</p>
+<button class="w-full bg-secondary-container text-on-secondary-container font-bold py-3 rounded-full hover:bg-secondary hover:text-on-secondary transition-colors">Adopt Me</button>
+</div>
+</div>
+<!-- Puppy Card 3 -->
+<div class="group bg-surface-container-lowest rounded-xl lg:rounded-t-xl lg:rounded-br-xl lg:rounded-bl-md overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="Labrador Puppy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Two chocolate labrador puppies cuddling together on a soft rug in a cozy living room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCNT97eRelHtjvxVGzr13kuDQh85p_TmePTlW6Q5L95wNTVW74LgDW_5bU6-T1CKdEZ4Q3WEL28mBFhdISUKM-cSZpnnORUO_U6wavbkb6db6HnkYG5Hqkx_gIhwciaoE04lmALcuRiXkh71htk11rvozKqenmq7JWk4y_6GJWu53QG44V0tf0AT66OchQIOSgNw-z-KTXidKm_hS4X8wVsAPr00-xAya3rcidTpUi9LNKbLocpUVP7b885KAwfo-XTQPQBaXMcbw"/>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-1">Bear</h3>
+<p class="text-on-surface-variant text-sm mb-4">3 Months • Labrador</p>
+<button class="w-full bg-secondary-container text-on-secondary-container font-bold py-3 rounded-full hover:bg-secondary hover:text-on-secondary transition-colors">Adopt Me</button>
+</div>
+</div>
+<!-- Puppy Card 4 -->
+<div class="group bg-surface-container-lowest rounded-xl lg:rounded-t-xl lg:rounded-br-xl lg:rounded-bl-md overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="Frenchie Puppy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cute french bulldog puppy wearing a small colorful bow tie looking at the camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh_Fl4QwNMmo-U_5DTnDjgT46E7obud-vxsy27e4b_23Cx_75Qvafq9DFDwvbbEvcz11pYVJv2CRjVQCFw0M5-EmB_PMp22y6wrJxt36zvx18mjyRBN8tmYEZWrWXIoSK4JpfFTbCHXMI2IG4HQFfeG0G3WlWoErRhikEvO17Zb1ZpTgGYChUraGtJIheAsh3ZILFOsXQNV6rC4jPxDq2nA64k6hPOCCB_HJpqHinrwtkApiwPiXBMx_G_xUQApfEaDGYQgo6vQco"/>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-1">Daisy</h3>
+<p class="text-on-surface-variant text-sm mb-4">5 Months • French Bulldog</p>
+<button class="w-full bg-secondary-container text-on-secondary-container font-bold py-3 rounded-full hover:bg-secondary hover:text-on-secondary transition-colors">Adopt Me</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="py-24 bg-surface-container-highest/30">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16">
+<h2 class="text-4xl font-extrabold mb-4">Holistic Pet Services</h2>
+<p class="text-on-surface-variant">We provide more than just a home; we provide a lifestyle.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="bg-primary-container/40 p-10 rounded-xl flex flex-col items-center text-center hover:scale-105 transition-transform">
+<div class="bg-primary w-20 h-20 rounded-full flex items-center justify-center mb-8 shadow-lg">
+<span class="material-symbols-outlined text-4xl text-on-primary" data-icon="content_cut">content_cut</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Luxury Grooming</h3>
+<p class="text-on-surface-variant">Stress-free organic spa treatments including blueberry facials and paw massages.</p>
+</div>
+<!-- Service 2 -->
+<div class="bg-secondary-container/40 p-10 rounded-xl flex flex-col items-center text-center hover:scale-105 transition-transform">
+<div class="bg-secondary w-20 h-20 rounded-full flex items-center justify-center mb-8 shadow-lg">
+<span class="material-symbols-outlined text-4xl text-on-secondary" data-icon="medical_services">medical_services</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Vet Care</h3>
+<p class="text-on-surface-variant">Integrative veterinary services combining modern medicine with holistic therapies.</p>
+</div>
+<!-- Service 3 -->
+<div class="bg-surface-container-high p-10 rounded-xl flex flex-col items-center text-center hover:scale-105 transition-transform">
+<div class="bg-on-surface-variant w-20 h-20 rounded-full flex items-center justify-center mb-8 shadow-lg">
+<span class="material-symbols-outlined text-4xl text-surface-container-lowest" data-icon="sports_dog">sports</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Playful Training</h3>
+<p class="text-on-surface-variant">Positive reinforcement training that focuses on the emotional bond between you and your pet.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 max-w-7xl mx-auto px-8">
+<div class="bg-surface-container-low rounded-xl p-12 lg:p-20 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-10">
+<span class="material-symbols-outlined text-8xl text-secondary-container opacity-50" data-icon="format_quote">format_quote</span>
+</div>
+<div class="relative z-10 max-w-3xl">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-secondary" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-secondary" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-secondary" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-secondary" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h2 class="text-3xl lg:text-4xl font-extrabold mb-8 italic">"Adopting Duke from Organic Sanctuary was the best decision of my life. They truly care about the soul of each animal. The transition was so soft and supported."</h2>
+<div class="flex items-center gap-4">
+<img alt="Customer Sarah" class="w-16 h-16 rounded-full object-cover border-4 border-surface-container-lowest" data-alt="Portrait of a young woman with a kind smile, clean and professional, bright outdoor setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_-ECtxcevzf0-td6wVDWxkcpxd5g8n3lEz0pjVv7tVZf1Hn2Jz6Qn5DGs3t8lW1sAY8JgStgoqFPPwSUZkVisq8W_n6gC_E_jE8XwzTA5wNx-zILUwvGz-p3UmzpoR9j1c1H9j1At8JxBkEWMn-PWmUB4raN_KJSk74G2yj1NAhwodi5iSYkJMV8BAjWIw-fAGNPZ3q47LE0Z74UPrc5yaULJ8lWJf5dJVCQl7U2vQiPRcvjLSF9kvhUUzCh6j9-lU6nPHOUhSRE"/>
+<div>
+<p class="font-bold text-xl">Sarah Jenkins</p>
+<p class="text-on-surface-variant">Adopted Duke, Golden Retriever</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#bcfef1] dark:bg-[#002a25] rounded-t-[3rem] w-full mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto font-['Be_Vietnam_Pro'] text-sm text-[#376455] dark:text-[#b7e7d5]">
+<div class="space-y-6">
+<div class="text-xl font-black text-[#376455]">Organic Sanctuary</div>
+<p class="opacity-80">Nurturing the bond between humans and pets through organic care and compassionate adoption.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-[#ffc1d0] transition-colors" data-icon="facebook">social_leaderboard</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-[#ffc1d0] transition-colors" data-icon="camera">camera</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-[#ffc1d0] transition-colors" data-icon="chat">chat</span>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold uppercase tracking-widest text-xs">Our World</h4>
+<nav class="flex flex-col gap-2 opacity-80">
+<a class="hover:text-[#ffc1d0] transition-colors" href="#">Puppy Care</a>
+<a class="hover:text-[#ffc1d0] transition-colors" href="#">Cat Adoption</a>
+<a class="hover:text-[#ffc1d0] transition-colors" href="#">Pet Grooming</a>
+<a class="hover:text-[#ffc1d0] transition-colors" href="#">Health Tips</a>
+<a class="hover:text-[#ffc1d0] transition-colors" href="#">Volunteer</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold uppercase tracking-widest text-xs">Company</h4>
+<nav class="flex flex-col gap-2 opacity-80">
+<a class="hover:text-[#ffc1d0] transition-colors" href="#">About Us</a>
+<a class="hover:text-[#ffc1d0] transition-colors" href="#">Our Team</a>
+<a class="hover:text-[#ffc1d0] transition-colors" href="#">Careers</a>
+<a class="hover:text-[#ffc1d0] transition-colors" href="#">Press Kit</a>
+</nav>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold uppercase tracking-widest text-xs">Newsletter</h4>
+<p class="opacity-80">Get monthly tips on organic pet care.</p>
+<div class="flex">
+<input class="bg-surface-container-lowest border-none rounded-l-full px-4 py-2 w-full focus:ring-2 focus:ring-primary" placeholder="Your email" type="email"/>
+<button class="bg-primary text-on-primary rounded-r-full px-4 py-2">Join</button>
+</div>
+</div>
+</div>
+<div class="text-center pb-8 opacity-60 text-xs border-t border-[#376455]/10 pt-8 max-w-7xl mx-auto px-8">
+            © 2024 Organic Sanctuary. All rights reserved. Made with love and paws.
+        </div>
+</footer>
+</body></html>

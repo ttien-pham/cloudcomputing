@@ -1,0 +1,7 @@
+[
+  {"id": 1, "name": "Nguyễn Văn An", "major": "CNTT", "gpa": 3.5},
+  {"id": 2, "name": "Trần Thị Bình", "major": "KTMT", "gpa": 3.7},
+  {"id": 3, "name": "Lê Minh Cường", "major": "HTTT", "gpa": 3.2},
+  {"id": 4, "name": "Phạm Thị Dung", "major": "CNTT", "gpa": 3.8},
+  {"id": 5, "name": "Võ Văn Em", "major": "ATTT", "gpa": 3.4}
+]
