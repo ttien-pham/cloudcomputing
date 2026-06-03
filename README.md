@@ -62,7 +62,7 @@ graph TD
         Backend -->|Truy vấn dữ liệu| DB[(Database - MariaDB)]
         Backend -->|Kiểm tra Token| Keycloak
         
-        DNS[DNS Server - Bind9] -.->|Phân giải tên miền nội bộ| Internal_Network
+        DNS[DNS Server - Bind9] -.->|Phân giải tên miền nội bộ| Backend
         
         MinIO[Object Storage - MinIO]
     end
